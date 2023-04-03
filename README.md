@@ -6,8 +6,12 @@ To run these examples, you'll need an OpenAI account and associated API key ([cr
 
 Most code examples are written in Python, though the concepts can be applied in any language.
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=468576060&machine=basicLinux32gb&location=EastUs)
+
 ## Recently added 🆕 ✨
 
+- [How to format inputs to ChatGPT models](examples/How_to_format_inputs_to_ChatGPT_models.ipynb) [Mar 1st, 2023]
+- [Using Vector Databases for Embeddings Search with Redis](https://github.com/openai/openai-cookbook/tree/main/examples/vector_databases/redis) [Feb 15th, 2023]
 - [Website Q&A with Embeddings](https://github.com/openai/openai-cookbook/tree/main/apps/web-crawl-q-and-a) [Feb 11th, 2023]
 - [File Q&A with Embeddings](https://github.com/openai/openai-cookbook/tree/main/apps/file-q-and-a) [Feb 11th, 2023]
 - [Visualize Embeddings in Weights & Biases](https://github.com/openai/openai-cookbook/blob/main/examples/Visualizing_embeddings_in_W%26B.ipynb) [Feb 9th, 2023]
@@ -21,6 +25,8 @@ Most code examples are written in Python, though the concepts can be applied in 
     - [Example parallel processing script that avoids hitting rate limits](examples/api_request_parallel_processor.py)
   - [How to count tokens with tiktoken](examples/How_to_count_tokens_with_tiktoken.ipynb)
   - [How to stream completions](examples/How_to_stream_completions.ipynb)
+- ChatGPT
+  - [How to format inputs to ChatGPT models](examples/How_to_format_inputs_to_ChatGPT_models.ipynb)
 - GPT-3
   - [Guide: How to work with large language models](how_to_work_with_large_language_models.md)
   - [Guide: Techniques to improve reliability](techniques_to_improve_reliability.md)
@@ -46,6 +52,7 @@ Most code examples are written in Python, though the concepts can be applied in 
 - DALL-E
   - [How to generate and edit images with DALL-E](examples/dalle/Image_generations_edits_and_variations_with_DALL-E.ipynb)
 - Azure OpenAI (alternative API from Microsoft Azure)
+  - [How to use ChatGPT with Azure OpenAI](examples/azure/chat.ipynb)
   - [How to get completions from Azure OpenAI](examples/azure/completions.ipynb)
   - [How to get embeddings from Azure OpenAI](examples/azure/embeddings.ipynb)
   - [How to fine-tune GPT-3 with Azure OpenAI](examples/azure/finetuning.ipynb)
