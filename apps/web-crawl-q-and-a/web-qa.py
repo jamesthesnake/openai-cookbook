@@ -13,13 +13,11 @@ import os
 import pandas as pd
 import tiktoken
 import openai
-from openai.embeddings_utils import distances_from_embeddings
-import pandas as pd
 import numpy as np
 from openai.embeddings_utils import distances_from_embeddings, cosine_similarity
 
 # Regex pattern to match a URL
-HTTP_URL_PATTERN = r'^http[s]*://.+'
+HTTP_URL_PATTERN = r'^http[s]{0,1}://.+$'
 
 # Define root domain to crawl
 domain = "openai.com"
@@ -249,6 +247,10 @@ def split_into_many(text, max_tokens = max_tokens):
         # Otherwise, add the sentence to the chunk and add the number of tokens to the total
         chunk.append(sentence)
         tokens_so_far += token + 1
+        
+    # Add the last chunk to the list of chunks
+    if chunk:
+        chunks.append(". ".join(chunk) + ".")
 
     return chunks
     
@@ -281,6 +283,9 @@ df.n_tokens.hist()
 ################################################################################
 ### Step 10
 ################################################################################
+
+# Note that you may run into rate limit issues depending on how many files you try to embed
+# Please check out our rate limit guide to learn more on how to handle this: https://platform.openai.com/docs/guides/rate-limits
 
 df['embeddings'] = df.text.apply(lambda x: openai.Embedding.create(input=x, engine='text-embedding-ada-002')['data'][0]['embedding'])
 df.to_csv('processed/embeddings.csv')
